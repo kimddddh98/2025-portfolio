@@ -45,8 +45,8 @@ export default function SkillPage() {
             { name: 'HTML5', level: 'Proficient' },
             { name: 'CSS3', level: 'Proficient' },
             { name: 'SCSS / Sass', level: 'Proficient' },
-            { name: 'TailwindCSS', level: 'Intermediate' },
             { name: 'Responsive Design', level: 'Proficient' },
+            { name: 'TailwindCSS', level: 'Intermediate' },
           ]}
         />
 
@@ -66,9 +66,10 @@ export default function SkillPage() {
         <SkillCard
           title="State Management"
           skills={[
+            { name: 'Redux', level: 'Intermediate' },
             { name: 'Zustand', level: 'Intermediate' },
             { name: 'React Query', level: 'Intermediate' },
-            { name: 'Redux', level: 'Intermediate' },
+            { name: 'SWR', level: 'Familiar' },
           ]}
         />
 

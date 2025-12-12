@@ -9,7 +9,7 @@ const NavBar = () => {
         <NavButton text="Project" href="/project" />
         <NavButton text="About" href="/about" />
         <NavButton text="Skill" href="/skill" />
-        <NavButton text="Contact" href="/project" />
+        <NavButton text="Contact" href="/contact" />
         <NavButton text="More" href="/project" />
       </div>
     </nav>

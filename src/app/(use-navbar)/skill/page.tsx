@@ -39,11 +39,11 @@ export default function SkillPage() {
         <SkillCard
           title="Markup"
           skills={[
-            { name: 'HTML5', level: 'Intermediate' },
-            { name: 'CSS3', level: 'Intermediate' },
+            { name: 'HTML5', level: 'Proficient' },
+            { name: 'CSS3', level: 'Proficient' },
             { name: 'SCSS / Sass', level: 'Proficient' },
             { name: 'TailwindCSS', level: 'Intermediate' },
-            { name: 'Responsive Design', level: 'Intermediate' },
+            { name: 'Responsive Design', level: 'Proficient' },
           ]}
         />
 
@@ -52,10 +52,10 @@ export default function SkillPage() {
           title="Frontend Framework"
           skills={[
             { name: 'React', level: 'Intermediate' },
-            { name: 'Next.js', level: 'Proficient' },
-            { name: 'TypeScript', level: 'Proficient' },
-            { name: 'React Native', level: 'Proficient' },
-            { name: 'Expo', level: 'Familiar' },
+            { name: 'Vue', level: 'Intermediate' },
+            { name: 'Next.js', level: 'Familiar' },
+            { name: 'TypeScript', level: 'Intermediate' },
+            { name: 'React Native', level: 'Intermediate' },
           ]}
         />
 
@@ -64,8 +64,8 @@ export default function SkillPage() {
           title="State Management"
           skills={[
             { name: 'Zustand', level: 'Intermediate' },
-            { name: 'React Query', level: 'Proficient' },
-            { name: 'Redux Toolkit', level: 'Familiar' },
+            { name: 'React Query', level: 'Intermediate' },
+            { name: 'Redux', level: 'Intermediate' },
           ]}
         />
 
@@ -73,12 +73,10 @@ export default function SkillPage() {
         <SkillCard
           title="Backend / Database"
           skills={[
-            { name: 'Node.js', level: 'Proficient' },
             { name: 'NestJS', level: 'Familiar' },
-            { name: 'SQLite', level: 'Proficient' },
+            { name: 'SQLite', level: 'Familiar' },
             { name: 'PostgreSQL', level: 'Familiar' },
-            { name: 'Drizzle ORM', level: 'Proficient' },
-            { name: 'Firebase', level: 'Familiar' },
+            { name: 'Drizzle ORM', level: 'Intermediate' },
           ]}
         />
 
@@ -87,9 +85,10 @@ export default function SkillPage() {
           title="Tools"
           skills={[
             { name: 'Git / GitHub', level: 'Proficient' },
-            { name: 'Vercel', level: 'Proficient' },
-            { name: 'Expo EAS', level: 'Proficient' },
-            { name: 'Jira / Notion', level: 'Familiar' },
+            { name: 'Postman', level: 'Intermediate' },
+            { name: 'ESLint / Prettier', level: 'Intermediate' },
+            { name: 'Figma', level: 'Intermediate' },
+            { name: 'Vercel', level: 'Familiar' },
           ]}
         />
       </div>

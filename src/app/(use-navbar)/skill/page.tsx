@@ -3,6 +3,7 @@
 import LevelBadge from '@/components/skill/levelBadge'
 import { SkillLevel } from '@/types/skillLevel.type'
 import React from 'react'
+import styles from '@/styles/skill.module.scss'
 
 const SkillItem = ({ name, level }: { name: string; level: SkillLevel }) => (
   <div className="flex items-center justify-between py-1">
@@ -19,7 +20,9 @@ const SkillCard = ({
   title: string
   skills: { name: string; level: SkillLevel }[]
 }) => (
-  <div className="bg-background/10 shadow-background/10 flex flex-col gap-3 rounded-2xl border border-white/60 p-5 text-white shadow-lg backdrop-blur-xl dark:bg-white/5">
+  <div
+    className={`bg-background/10 shadow-background/10 flex flex-col gap-3 rounded-2xl border border-white/60 p-5 text-white shadow-lg backdrop-blur-xl dark:bg-white/5 ${styles.skillBox}`}
+  >
     <h3 className="mb-2 text-lg font-semibold">{title}</h3>
 
     <div className="flex flex-col gap-1">

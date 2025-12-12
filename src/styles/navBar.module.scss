@@ -1,0 +1,91 @@
+@reference "../styles/tailwind.css";
+
+.apBtn {
+  background: var(--ap-btn-background);
+  @apply text-white;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    display: block;
+    pointer-events: none;
+    border-radius: 28px;
+    transition: background-color 0.2s cubic-bezier(0.05, 0, 0, 1);
+  }
+
+  &:hover::after {
+    background-color: var(--ap-btn-hover-background);
+  }
+}
+
+@keyframes cubeSpin {
+  from {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  to {
+    transform: rotateY(-360deg) rotateX(360deg);
+  }
+}
+
+.cubeWrap {
+  width: 3vw;
+  height: 3vw;
+  position: relative;
+}
+
+.cubeAnimation {
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  top: 0;
+  animation: cubeSpin 5s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.cube {
+  width: 3vw;
+  height: 3vw;
+  background-color: var(--ap-btn-background);
+  border-color: var(--ap-btn-hover-background);
+  @apply absolute flex items-center justify-center border border-solid text-sm text-white opacity-80;
+
+  &-first {
+    transform: rotateY(90deg) translateZ(1.5vw);
+  }
+
+  &-second {
+    transform: translateZ(1.5vw);
+  }
+
+  &-third {
+    transform: rotateY(-90deg) translateZ(1.5vw);
+  }
+
+  &-fourth {
+    transform: rotateX(90deg) translateZ(1.5vw);
+  }
+
+  &-fifth {
+    transform: rotateX(-90deg) translateZ(1.5vw);
+  }
+
+  &-sixth {
+    transform: rotateX(180deg) translateZ(1.5vw);
+  }
+}
+
+.themeButton {
+  @apply flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full;
+}
+
+.themeButton:not(.themeButtonSelected) {
+  &:hover {
+    background-color: var(--ap-btn-hover-background);
+  }
+}
+
+.themeButtonSelected {
+  background-color: var(--dk-gray-100);
+}

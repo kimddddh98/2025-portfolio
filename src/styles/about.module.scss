@@ -1,0 +1,17 @@
+@reference "../styles/tailwind.css";
+
+.aboutInfoList {
+  @apply flex gap-2
+}
+
+.aboutTitle {
+  @apply text-2xl font-medium
+}
+
+.aboutUnderLine {
+  @apply border-t w-[40%]
+}
+
+.aboutSectionWrap {
+  @apply flex flex-col gap-4
+}

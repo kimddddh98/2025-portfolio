@@ -1,0 +1,35 @@
+@reference "../styles/tailwind.css";
+
+.projectWrap {
+
+  @apply flex h-70 rounded-2xl overflow-hidden bg-white/90 cursor-pointer;
+  width: calc(25% - 40px);
+  background-size: 100% 100%;
+  // filter: brightness(30%);
+
+}
+
+// .sphere {
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-100px, -100px);
+
+//   width: 200px;
+//   height: 200px;
+//   border-radius: 50%;
+//   background: radial-gradient(circle at 30% 30%,
+//       /* 빛이 들어오는 위치 */
+//       #ffffff,
+//       /* 하이라이트 */
+//       #c6d0ff 20%,
+//       /* 중간 톤 */
+//       #6a80ff 60%,
+//       /* 본 색 */
+//       #2f3ebd 100%
+//       /* 가장 어두운 그림자 */
+//     );
+//   box-shadow:
+//     inset -20px -20px 40px rgba(0, 0, 0, 0.4),
+//     0 12px 25px rgba(0, 0, 0, 0.3);
+// }

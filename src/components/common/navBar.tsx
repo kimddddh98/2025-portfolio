@@ -1,3 +1,4 @@
+import { PAGES } from '@/const/router.const'
 import NavButton from './navButton'
 import NavHomeBtn from './navHomeBtn'
 
@@ -6,11 +7,13 @@ const NavBar = () => {
     <nav className="flex items-center gap-20 px-10 py-5">
       <NavHomeBtn />
       <div className="flex flex-1 justify-between">
-        <NavButton text="Project" href="/project" />
-        <NavButton text="About" href="/about" />
-        <NavButton text="Skill" href="/skill" />
-        <NavButton text="Contact" href="/contact" />
-        <NavButton text="More" href="/more" />
+        {PAGES.map((p) => (
+          <NavButton
+            key={p}
+            text={p.slice(1).charAt(0).toLocaleUpperCase() + p.slice(2)}
+            href={p}
+          />
+        ))}
       </div>
     </nav>
   )

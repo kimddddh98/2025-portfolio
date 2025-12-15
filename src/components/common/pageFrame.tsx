@@ -8,7 +8,6 @@ const pages = PAGES
 export default function PageFrame({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
-  console.log('pathname', pathname)
   const isScrolling = useRef(false)
 
   const [animating, setAnimating] = useState(false)
@@ -28,7 +27,6 @@ export default function PageFrame({ children }: { children: React.ReactNode }) {
 
       const currentIndex = pages.indexOf(pathname)
       let nextIndex = currentIndex
-      console.log(currentIndex)
 
       if (e.deltaY > 0 && currentIndex < pages.length - 1) nextIndex++
       else if (e.deltaY < 0 && currentIndex > 0) nextIndex--

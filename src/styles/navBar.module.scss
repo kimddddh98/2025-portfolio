@@ -17,7 +17,14 @@
   &:hover::after {
     background-color: var(--ap-btn-hover-background);
   }
+  &.focus {
+    background-color: var(--ap-btn-focus-background);
+  }
 }
+
+// .apBtn.focus {
+//   background-color: var(--ap-btn-focus-background);
+// }
 
 @keyframes cubeSpin {
   from {

@@ -4,10 +4,14 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function sendMail(formData: FormData) {
-  const name = formData.get('name') as string
-  const email = formData.get('email') as string
-  const message = formData.get('message') as string
+export interface EmailForm {
+  name: string
+  email: string
+  message: string
+}
+
+export async function sendMail(data: EmailForm) {
+  const { name, email, message } = data
 
   if (!name || !email || !message) {
     return { success: false, error: 'Missing fields' }

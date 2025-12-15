@@ -1,14 +1,50 @@
 'use client'
-import { sendMail } from '@/app/actions/sendMail'
+import { EmailForm, sendMail } from '@/app/actions/sendMail'
+import TopToast from '@/components/common/TopToast'
 import Image from 'next/image'
-import { resourceLimits } from 'worker_threads'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 export default function ContactPage() {
-  async function handleSubmit(formData: FormData) {
-    const result = await sendMail(formData)
-    console.log(result)
-    // setStatus(result.success ? "success" : "error");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<EmailForm>()
+
+  const [toast, setToast] = useState<{
+    visible: boolean
+    type: 'success' | 'error'
+    message: string
+  }>({
+    visible: false,
+    type: 'success',
+    message: '',
+  })
+  const onSubmit = async (data: EmailForm) => {
+    const res = await sendMail(data)
+
+    if (res.success) {
+      setToast({
+        visible: true,
+        type: 'success',
+        message: '메일이 성공적으로 전송되었습니다.',
+      })
+      reset()
+    } else {
+      setToast({
+        visible: false,
+        type: 'error',
+        message: '메일 전송에 실패했습니다. 다시 시도해주세요.',
+      })
+    }
+
+    setTimeout(() => {
+      setToast((prev) => ({ ...prev, visible: false }))
+    }, 3000)
   }
+
   return (
     <div className="flex h-full w-full items-center justify-center px-4">
       <div className="flex w-full max-w-5xl overflow-hidden">
@@ -63,26 +99,61 @@ export default function ContactPage() {
         <div className="flex w-3/5 flex-col justify-center p-10">
           <h3 className="mb-6 text-2xl font-semibold">Send a Message</h3>
 
-          <form className="flex flex-col gap-5" action={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="이름을 입력해주세요."
-              className="default-glass text-foreground placeholder-foreground/30 w-full px-4 py-3 focus:border-white focus:outline-none"
-            />
+          <form
+            className="flex flex-col gap-5"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <div>
+              <input
+                {...register('name', { required: '이름을 입력해주세요.' })}
+                type="text"
+                placeholder="이름을 입력해주세요."
+                className="default-glass text-foreground placeholder-foreground/30 w-full px-4 py-3 focus:border-white focus:outline-none"
+              />
+              {errors.name && (
+                <p className="mt-1 text-xs text-red-300 dark:text-red-400">
+                  {errors.name.message}
+                </p>
+              )}
+            </div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="이메일 주소를 입력해주세요."
-              className="default-glass text-foreground placeholder-foreground/30 w-full px-4 py-3 focus:border-white focus:outline-none"
-            />
+            <div>
+              <input
+                {...register('email', {
+                  required: '이메일을 입력해주세요.',
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: '올바른 이메일 형식이 아닙니다.',
+                  },
+                })}
+                placeholder="이메일 주소를 입력해주세요."
+                className="default-glass text-foreground placeholder-foreground/30 w-full px-4 py-3 focus:border-white focus:outline-none"
+              />
+              {errors.email && (
+                <p className="mt-1 text-xs text-red-300 dark:text-red-400">
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <textarea
+                {...register('message', {
+                  required: '메시지를 입력해주세요.',
+                  minLength: {
+                    value: 10,
+                    message: '메시지는 최소 10자 이상이어야 합니다.',
+                  },
+                })}
+                placeholder="내용을 입력해주세요."
+                className="text-foreground default-glass placeholder-foreground/30 h-32 w-full resize-none px-4 py-3 focus:border-white focus:outline-none"
+              />
 
-            <textarea
-              name="message"
-              placeholder="내용을 입력해주세요."
-              className="text-foreground default-glass placeholder-foreground/30 h-32 w-full resize-none px-4 py-3 focus:border-white focus:outline-none"
-            />
+              {errors.message && (
+                <p className="mt-1 text-xs text-red-300 dark:text-red-400">
+                  {errors.message.message}
+                </p>
+              )}
+            </div>
 
             <button
               type="submit"
@@ -90,6 +161,7 @@ export default function ContactPage() {
             >
               메일 작성하기
             </button>
+            <TopToast {...toast} />
           </form>
         </div>
       </div>

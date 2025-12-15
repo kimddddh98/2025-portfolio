@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import navBarStyles from '@/styles/navBar.module.scss'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const NavButton = ({ text, href }: { text: string; href: string }) => {
   const pathName = usePathname()

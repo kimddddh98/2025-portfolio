@@ -67,11 +67,11 @@ body.modal-on {
 }
 
 .default-glass {
-  @apply rounded-xl border border-white/10 bg-white/30 shadow-sm backdrop-blur-md dark:bg-white/10;
+  @apply rounded-xl border border-white/10 bg-white/10 shadow-sm backdrop-blur-md dark:bg-white/10;
 }
 
 .default-glass.hover {
-  @apply hover:bg-white/10 dark:hover:bg-white/30;
+  @apply cursor-pointer hover:bg-white/30 dark:hover:bg-white/30;
 }
 
 .main-cube-wrap {

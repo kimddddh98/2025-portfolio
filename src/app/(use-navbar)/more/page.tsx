@@ -1,14 +1,16 @@
+import Link from 'next/link'
+
 export default function MorePage() {
   return (
-    <div className="flex h-screen w-full items-center justify-center px-6">
-      <div className="w-full rounded-3xl px-10 py-16 text-center">
-        <h1 className="mb-6 text-4xl font-semibold tracking-wide text-white md:text-5xl">
+    <div className="flex h-full w-full items-center justify-center">
+      <div className="w-full rounded-3xl text-center">
+        <h1 className="mb-6 text-4xl font-semibold tracking-wide md:text-5xl">
           THANK YOU FOR WATCHING
         </h1>
 
-        <div className="mx-auto mb-6 h-px w-16 bg-white/40" />
+        <div className="mx-auto mb-6 h-px w-16 bg-black/40 dark:bg-white/40" />
 
-        <p className="text-base leading-relaxed text-white/80 md:text-lg">
+        <p className="text-base leading-relaxed md:text-lg">
           끝까지 포트폴리오를 봐주셔서 감사합니다.
           <br />
           실무 경험을 바탕으로 사용자 경험과 유지보수를 함께 고려한 개발을
@@ -20,19 +22,20 @@ export default function MorePage() {
 
         {/* Optional Action */}
         <div className="mt-10 flex justify-center gap-4">
-          <a
+          <Link
             href="/contact"
-            className="rounded-xl border border-white/30 bg-white/20 px-6 py-3 text-white backdrop-blur-lg transition hover:bg-white/30"
+            className="default-glass hover px-6 py-3 transition"
           >
             Contact Me
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/"
-            className="rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-white/80 backdrop-blur-lg transition hover:bg-white/20"
+            className="default-glass hover px-6 py-3 transition"
+            // className="default-glass hover border border-white/20 bg-white/10 px-6 py-3 text-white/80 backdrop-blur-lg transition **:rounded-xl hover:bg-white/20"
           >
             Back to Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

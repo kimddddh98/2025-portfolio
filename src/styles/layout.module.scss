@@ -1,7 +1,5 @@
 @reference "../styles/tailwind.css";
 
-
-
 .glassFrame {
   backdrop-filter: blur(20px);
   border-radius: 20px;
@@ -23,9 +21,11 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg,
-      transparent,
-      var(--glass-shadow-dark) transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glass-shadow-dark) transparent
+  );
 }
 
 .glassFrame::after {
@@ -35,16 +35,24 @@
   left: 0;
   width: 1px;
   height: 100%;
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.8),
-      transparent,
-      rgba(255, 255, 255, 0.3));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
 }
 
-.frameContainer.shrink {
+.frameContainer.shrinkRight {
   /* transform: scale(0.9); */
   opacity: 0.8;
   animation: slideFromRight 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.frameContainer.shrinkLeft {
+  /* transform: scale(0.9); */
+  opacity: 0.8;
+  animation: slideFromLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .frameContainer {
@@ -60,7 +68,22 @@
 
   50% {
     transform: translateX(0) scale(0.9);
+  }
 
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%) scale(0.9);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateX(0) scale(0.9);
   }
 
   100% {

@@ -52,7 +52,7 @@ const AboutPage = () => {
           </li>
         </ul>
       </div>
-      <section className="my-6 mr-5 flex flex-1 flex-col justify-around">
+      <section className="my-6 mr-5 flex flex-1 flex-col justify-between">
         <div className={`${styles.aboutSectionWrap} default-glass`}>
           <h5 className={styles.aboutTitle}>소개</h5>
           <pre className="whitespace-pre-wrap">

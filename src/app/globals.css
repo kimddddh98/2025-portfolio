@@ -21,7 +21,7 @@
     --ap-btn-background: rgba(36, 36, 36, 0.3);
     --ap-btn-hover-background: rgba(23, 23, 23, 0.1);
     --dk-gray-100: rgba(43, 43, 43, 0.5);
-    --glass-shadow-light: rgba(255, 255, 255, 1);
+    --glass-shadow-light: rgba(168, 192, 238, 0.3);
     --glass-shadow-dark: rgba(255, 255, 255, 0.8);
     --project-card-gradient: rgba(0, 0, 0, 0.1);
     --main-cube-background: rgba(36, 36, 36, 0.1);
@@ -45,7 +45,7 @@ body {
   background: radial-gradient(
     circle,
     var(--glass-shadow-light) 1%,
-    var(--background) 78%
+    var(--background) 90%
   );
   color: var(--foreground);
   font-family: var(--font-pretendard);
@@ -65,6 +65,15 @@ body.modal-on {
   font-family: var(--font-nosifer);
   @apply font-semibold;
 }
+
+.default-glass {
+  @apply rounded-xl border border-white/10 bg-white/30 shadow-sm backdrop-blur-md dark:bg-white/10;
+}
+
+.default-glass.hover {
+  @apply hover:bg-white/10 dark:hover:bg-white/30;
+}
+
 .main-cube-wrap {
   transform: skewX(0deg);
   animation: mainCubeSpin 5s infinite linear;

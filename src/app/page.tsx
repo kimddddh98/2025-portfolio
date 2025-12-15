@@ -61,7 +61,7 @@ export default function Home() {
           <Link
             href={p}
             key={p}
-            className="circleItem text-foreground rounded-2xl border border-white/10 bg-white/30 text-4xl font-semibold shadow-lg backdrop-blur-xs dark:border-white/10 dark:bg-black/9 dark:text-white dark:shadow-[inset_0_0_20px_rgba(255,255,255,0.1)]"
+            className="circleItem text-foreground rounded-2xl border border-white/10 bg-white/20 text-4xl font-semibold shadow-lg backdrop-blur-xs dark:border-white/10 dark:bg-black/9 dark:text-white dark:shadow-[inset_0_0_20px_rgba(255,255,255,0.1)]"
             style={{
               transform: `rotateY(${70 * (index + wheelIndex)}deg) translateZ(30vw) translateY(${10 * (index + wheelIndex)}vw)`,
             }}

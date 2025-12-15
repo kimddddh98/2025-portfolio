@@ -8,7 +8,7 @@ export default function MorePage() {
           THANK YOU FOR WATCHING
         </h1>
 
-        <div className="mx-auto mb-6 h-px w-16 bg-black/40 dark:bg-white/40" />
+        <div className="mx-auto mb-6 h-px w-24 bg-black/40 dark:bg-white/40" />
 
         <p className="text-base leading-relaxed md:text-lg">
           끝까지 포트폴리오를 봐주셔서 감사합니다.

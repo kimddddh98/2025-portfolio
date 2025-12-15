@@ -10,7 +10,7 @@ export default function ContactPage() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<EmailForm>()
 
   const [toast, setToast] = useState<{
@@ -157,9 +157,9 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="default-glass hover text-foreground mt-2 flex items-center justify-center gap-2 px-6 py-3 transition"
+              className="default-glass hover text-foreground mt-2 flex items-center justify-center gap-2 px-6 py-3 font-medium transition"
             >
-              메일 작성하기
+              Send Message
             </button>
             <TopToast {...toast} />
           </form>

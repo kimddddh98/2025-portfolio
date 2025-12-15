@@ -1,5 +1,3 @@
-'use client'
-
 import LevelBadge from '@/components/skill/levelBadge'
 import { SkillLevel } from '@/types/skillLevel.type'
 import React from 'react'
@@ -21,7 +19,7 @@ const SkillCard = ({
   skills: { name: string; level: SkillLevel }[]
 }) => (
   <div
-    className={`bg-background/10 shadow-background/10 flex flex-col gap-3 rounded-2xl border border-white/60 p-5 text-white shadow-lg backdrop-blur-xl dark:bg-white/5 ${styles.skillBox}`}
+    className={`bg-background/10 shadow-background/10 flex flex-col gap-3 rounded-2xl border border-white/60 p-5 shadow-lg backdrop-blur-xl dark:bg-white/5 ${styles.skillBox}`}
   >
     <h3 className="mb-2 text-lg font-semibold">{title}</h3>
 

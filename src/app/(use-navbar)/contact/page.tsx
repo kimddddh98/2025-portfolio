@@ -5,7 +5,7 @@ export default function ContactPage() {
     <div className="flex h-full w-full items-center justify-center px-4">
       <div className="flex w-full max-w-5xl overflow-hidden">
         {/* Left: Contact Info */}
-        <div className="flex w-2/5 flex-col justify-center border-r border-white/20 p-10 dark:text-white">
+        <div className="flex w-2/5 flex-col justify-center border-r border-black/10 p-10 dark:border-white/20 dark:text-white">
           <h2 className="mb-6 text-3xl font-semibold">Contact</h2>
           <p className="mb-10 text-lg">
             궁금한 점이나 함께 해보고 싶은 프로젝트가 있다면 언제든 메세지

@@ -1,6 +1,14 @@
+'use client'
+import { sendMail } from '@/app/actions/sendMail'
 import Image from 'next/image'
+import { resourceLimits } from 'worker_threads'
 
 export default function ContactPage() {
+  async function handleSubmit(formData: FormData) {
+    const result = await sendMail(formData)
+    console.log(result)
+    // setStatus(result.success ? "success" : "error");
+  }
   return (
     <div className="flex h-full w-full items-center justify-center px-4">
       <div className="flex w-full max-w-5xl overflow-hidden">
@@ -55,20 +63,23 @@ export default function ContactPage() {
         <div className="flex w-3/5 flex-col justify-center p-10">
           <h3 className="mb-6 text-2xl font-semibold">Send a Message</h3>
 
-          <form className="flex flex-col gap-5">
+          <form className="flex flex-col gap-5" action={handleSubmit}>
             <input
               type="text"
+              name="name"
               placeholder="이름을 입력해주세요."
               className="default-glass text-foreground placeholder-foreground/30 w-full px-4 py-3 focus:border-white focus:outline-none"
             />
 
             <input
               type="email"
+              name="email"
               placeholder="이메일 주소를 입력해주세요."
               className="default-glass text-foreground placeholder-foreground/30 w-full px-4 py-3 focus:border-white focus:outline-none"
             />
 
             <textarea
+              name="message"
               placeholder="내용을 입력해주세요."
               className="text-foreground default-glass placeholder-foreground/30 h-32 w-full resize-none px-4 py-3 focus:border-white focus:outline-none"
             />

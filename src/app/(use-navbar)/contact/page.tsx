@@ -34,7 +34,7 @@ export default function ContactPage() {
       reset()
     } else {
       setToast({
-        visible: false,
+        visible: true,
         type: 'error',
         message: '메일 전송에 실패했습니다. 다시 시도해주세요.',
       })

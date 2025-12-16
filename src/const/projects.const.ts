@@ -75,7 +75,7 @@ export const PROJECT_DETAILS = [
       "기존 그룹웨어 솔루션 '비즈비 웍스'의 웹 버전을 사용하면서 모바일 앱의 필요성이 생겨 시작된 프로젝트로 React-Native 를 사용하여 앱 개발을 진행하였습니다.",
     works: [
       'WebStomp 기반 소켓 통신 채팅 기능 구현',
-      'SQLite, Drizzle ORM 을 활용하여 기기 DB 를 통해 채팅 내역 저장하도록 개선',
+      'SQLite, Drizzle ORM 을 활용하여 기기 DB 를 통해 채팅 내역을 불러오도록 개선',
       'react-native-gesture-handler, react-native-reanimated 를 활용하여 사용자 경헙을 높일 수 있는 앱 인터랙션 구현',
       '초기 서버상태를 관리하지 않고 있던 환경에서 주도적으로 React-Query 를 도입하여 별도의 서버 상태관리와 캐시키 관리를 통해 성능 개선 진행',
       '다국어 지원 요청으로 인해 i18n 과 언어별 ts 파일을 정의하여 요청사항 적용(일본어)',

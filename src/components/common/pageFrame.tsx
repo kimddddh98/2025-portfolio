@@ -1,5 +1,9 @@
 'use client'
-import { usePathname, useRouter } from 'next/navigation'
+import {
+  usePathname,
+  useRouter,
+  useSelectedLayoutSegments,
+} from 'next/navigation'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import layoutStyles from '@/styles/layout.module.scss'
 import { PAGES } from '@/const/router.const'
@@ -8,6 +12,9 @@ const pages = PAGES
 export default function PageFrame({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
+  const segments = useSelectedLayoutSegments()
+  const currentPage = segments.join('/')
+
   const isScrolling = useRef(false)
 
   const [animating, setAnimating] = useState(false)
@@ -17,14 +24,19 @@ export default function PageFrame({ children }: { children: React.ReactNode }) {
 
   useLayoutEffect(() => {
     // 페이지 전환 시 애니메이션 트리거
+    let timer: NodeJS.Timeout
     setAnimating(true)
-    const timer = setTimeout(() => setAnimating(false), 800)
-    return () => clearTimeout(timer)
-  }, [pathname])
+    timer = setTimeout(() => setAnimating(false), 800)
+
+    return () => {
+      if (timer) clearTimeout(timer)
+    }
+  }, [currentPage])
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       if (isScrolling.current) return
+
       isScrolling.current = true
 
       const currentIndex = pages.indexOf(pathname)

@@ -6,7 +6,14 @@ const AboutPage = () => {
       <div
         className={`default-glass mx-5 my-6 flex flex-col items-center justify-around px-12 py-10 backdrop-blur-lg ${styles.aboutSectionLeft}`}
       >
-        <div className="h-50 w-50 rounded-full border-4 border-white"></div>
+        <div className="h-50 w-50 overflow-hidden rounded-full border-4 border-white">
+          <Image
+            src={'/id-picture.jpg'}
+            alt="증명사진"
+            width={200}
+            height={200}
+          />
+        </div>
         <div className="flex flex-col items-center gap-4">
           <h3 className="text-2xl font-medium">김동현</h3>
           <h4 className="text-xl font-medium">프론트엔드 개발자</h4>

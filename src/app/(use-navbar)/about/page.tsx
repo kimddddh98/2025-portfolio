@@ -3,7 +3,9 @@ import styles from '@/styles/about.module.scss'
 const AboutPage = () => {
   return (
     <div className="flex h-full">
-      <div className="default-glass mx-5 my-6 flex flex-col items-center justify-around px-12 py-10 backdrop-blur-lg">
+      <div
+        className={`default-glass mx-5 my-6 flex flex-col items-center justify-around px-12 py-10 backdrop-blur-lg ${styles.aboutSectionLeft}`}
+      >
         <div className="h-50 w-50 rounded-full border-4 border-white"></div>
         <div className="flex flex-col items-center gap-4">
           <h3 className="text-2xl font-medium">김동현</h3>
@@ -52,8 +54,12 @@ const AboutPage = () => {
           </li>
         </ul>
       </div>
-      <section className="my-6 mr-5 flex flex-1 flex-col justify-between">
-        <div className={`${styles.aboutSectionWrap} default-glass`}>
+      <section
+        className={`my-6 mr-5 flex flex-1 flex-col justify-between ${styles.aboutRightWrap}`}
+      >
+        <div
+          className={`${styles.aboutSectionWrap} ${styles.aboutSectionRight} default-glass delay-500`}
+        >
           <h5 className={styles.aboutTitle}>소개</h5>
           <pre className="whitespace-pre-wrap">
             웹 퍼블리셔에서 시작하여 현재는 프론트엔드 개발자가 되어 성장하고
@@ -64,7 +70,9 @@ const AboutPage = () => {
             개발할 수 있다는 장점을 가지고 있습니다.
           </pre>
         </div>
-        <div className={`${styles.aboutSectionWrap} default-glass p-4`}>
+        <div
+          className={`${styles.aboutSectionWrap} ${styles.aboutSectionRight} default-glass p-4`}
+        >
           <h5 className={styles.aboutTitle}>경력</h5>
           <div>
             <p>
@@ -97,13 +105,17 @@ const AboutPage = () => {
             </ul>
           </div>
         </div>
-        <div className={`${styles.aboutSectionWrap} default-glass p-4`}>
+        <div
+          className={`${styles.aboutSectionWrap} ${styles.aboutSectionRight} default-glass p-4`}
+        >
           <h5 className={styles.aboutTitle}>학력</h5>
           <ul>
             <li>안산고등학교 졸업</li>
           </ul>
         </div>
-        <div className={`${styles.aboutSectionWrap} default-glass p-4`}>
+        <div
+          className={`${styles.aboutSectionWrap} ${styles.aboutSectionRight} default-glass p-4`}
+        >
           <h5 className={styles.aboutTitle}>자격증</h5>
           <ul>
             <li>웹 디자인 기능사 2022.09</li>

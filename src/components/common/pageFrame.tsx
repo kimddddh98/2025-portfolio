@@ -7,6 +7,7 @@ import {
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import layoutStyles from '@/styles/layout.module.scss'
 import { PAGES } from '@/const/router.const'
+import { usePageActions, usePageStore } from '@/store/usePageStore'
 
 const pages = PAGES
 export default function PageFrame({ children }: { children: React.ReactNode }) {
@@ -16,11 +17,9 @@ export default function PageFrame({ children }: { children: React.ReactNode }) {
   const currentPage = segments.join('/')
 
   const isScrolling = useRef(false)
-
+  const animationDirection = usePageStore((state) => state.animationDirection)
+  const { setAnimationDirection } = usePageActions()
   const [animating, setAnimating] = useState(false)
-  const [animationDirection, setAnimationDirection] = useState<
-    'right' | 'left'
-  >('right')
 
   useLayoutEffect(() => {
     // 페이지 전환 시 애니메이션 트리거

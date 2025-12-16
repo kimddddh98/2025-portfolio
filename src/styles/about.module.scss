@@ -13,7 +13,7 @@
 }
 
 .aboutSectionWrap {
-  @apply flex flex-col gap-2 px-6 py-4;
+  @apply flex flex-col gap-2 p-6;
 }
 
 .aboutSectionLeft {
@@ -53,10 +53,10 @@
 @keyframes rightSlideIn {
   0% {
     opacity: 0;
-    transform: translateX(-50%);
+    // transform: translateX(-50%);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    // transform: translateX(0);
   }
 }

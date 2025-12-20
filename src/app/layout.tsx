@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import ThemeButton from '@/components/common/themeButton'
 import { cookies } from 'next/headers'
+import Script from 'next/script'
 // const geistSans = Geist({
 //   variable: '--font-geist-sans',
 //   subsets: ['latin'],
@@ -56,6 +57,20 @@ export const metadata: Metadata = {
   verification: {
     google: 'ObxVVpU8VNAHH6XlCAMBG0jF8ASsmoMfWK7d99yUBEY',
   },
+  keywords: [
+    '프론트엔드 개발자',
+    'Frontend Developer',
+    'Next.js',
+    '프론트엔드 개발자 포트폴리오',
+  ],
+  openGraph: {
+    title: '김동현 - Frontend Developer',
+    description: '프론트엔드 개발자 포트폴리오',
+    url: 'https://2025-portfolio-nu-one.vercel.app/',
+    siteName: '김동현 portfolio',
+    // images: ["/og-image.png"],
+    type: 'website',
+  },
 }
 
 export default async function RootLayout({
@@ -89,6 +104,20 @@ export default async function RootLayout({
             `,
           }}
         />
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-YEQDW092NX`}
+          strategy="afterInteractive"
+        />
+
+        <Script id="ga" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YEQDW092NX');
+          `}
+        </Script>
       </head>
       <body className={`${pretendard.variable} ${nosifer.variable}`}>
         <ThemeButton theme={theme} />

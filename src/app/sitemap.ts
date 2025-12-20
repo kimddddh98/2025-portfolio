@@ -3,17 +3,17 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://your-portfolio.vercel.app',
+      url: 'https://2025-portfolio-nu-one.vercel.app/',
       lastModified: new Date(),
     },
     {
-      url: 'https://your-portfolio.vercel.app/projects',
+      url: 'https://2025-portfolio-nu-one.vercel.app/projects',
     },
     {
-      url: 'https://your-portfolio.vercel.app/skills',
+      url: 'https://2025-portfolio-nu-one.vercel.app/skills',
     },
     {
-      url: 'https://your-portfolio.vercel.app/contact',
+      url: 'https://2025-portfolio-nu-one.vercel.app/contact',
     },
   ]
 }

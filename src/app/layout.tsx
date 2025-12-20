@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   title: 'portfolio',
   description: '프론트엔드 개발자 김동현 포트폴리오 입니다.',
   verification: {
-    google: 'bxVVpU8VNAHH6XlCAMBG0jF8ASsmoMfWK7d99yUBEY',
+    google: 'ObxVVpU8VNAHH6XlCAMBG0jF8ASsmoMfWK7d99yUBEY',
   },
 }
 

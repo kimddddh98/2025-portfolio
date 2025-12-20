@@ -93,7 +93,7 @@ const AboutPage = () => {
                   <li>
                     비즈비 웍스
                     <span className="text-[12px]">
-                      (*자사 그룹웨어 솔루션)
+                      {/* (*자사 그룹웨어 솔루션) */}
                     </span>{' '}
                     앱 개발 담당
                   </li>
